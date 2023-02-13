@@ -60,13 +60,7 @@ def cov(df1,df2):
     return np.cov(df1,df2)
 
 def ifelse(judge,tr,fl):
-    if isinstance(judge,bool):
-        return tr if judge else fl
-    else:
-        result = judge.copy().astype(np.object)
-        for inx,val in judge.iteritems():
-            result[inx] = tr if val else fl
-        return result
+    return tr if judge else fl
 
 
 class BufferOpt(object):
@@ -115,8 +109,13 @@ class rolling(BufferOpt):
 
 class trace(BufferOpt):
 
+    def __init__(self,size):
+        BufferOpt.__init__(self,size)
+        self.rolling0 = rolling(size)
+        self.rolling1 = rolling(size)
+        self.delta0 = delta(1)
+        self.delta1 = delta(1)
+
     def __call__(self, value,size):
         self.buffer.append(value)
-        self.rolling = rolling(size)
-        self.delta = delta(1)
-        return sum(abs(self.rolling(self.delta(value, 1), size))) / sum(self.rolling(self.delta(value, 1), size))
+        return sum(abs(self.rolling0(self.delta0(value, 1), size))) / abs(sum(self.rolling1(self.delta1(value, 1), size)))

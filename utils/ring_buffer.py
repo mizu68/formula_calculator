@@ -1,3 +1,5 @@
+import numpy as np
+
 
 class RingBuffer(object):
     def __init__(self, size):
@@ -16,7 +18,7 @@ class RingBuffer(object):
 
     def clear(self):
         self.size = 0
-        self.data = [None for i in range(self.capacity)]
+        self.data = [np.nan for i in range(self.capacity)]
 
     def isfull(self):
         return self.size == self.capacity
@@ -34,10 +36,3 @@ class RingBuffer(object):
 
     def get(self):
         return self.data
-
-    def reset_size(self,new_size):
-        if new_size>self.capacity:
-            self.data = [None for i in range(new_size - self.capacity)] + self.data
-        else:
-            #只增不减
-            pass

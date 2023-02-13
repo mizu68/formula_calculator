@@ -1,11 +1,11 @@
 import redis
 from datetime import datetime, timedelta, time
 import requests
-
+import random
 
 class StockChannel(object):
     _freq = ['s', 'S', 'm', 'M']
-    quot_http = "http://18.210.70.17:16666/manager"
+    quot_http = "http://18.210.70.160:18000/manager"
 
     def __init__(self,stock_code,cycle):
         if len(cycle) >= 2 and cycle[-1] in self._freq:
@@ -20,7 +20,7 @@ class StockChannel(object):
         self.redis_threading = []
 
         try:
-            amd = requests.post(self.quot_http, json={"op_type": "listen", "type": "market", "sub_type": "l2_orderbook", "session_id":"wlb","param":{"op_type": "start", "begin_time":1674091800,"end_time":1674111600,"cycle": self.bar_step.seconds * 1000, "codes":[stock_code,]}})
+            amd = requests.post(self.quot_http, json={"op_type": "listen", "type": "market", "sub_type": "l2_orderbook", "session_id":"wlb_{}".format(random.randint(0,999)),"param":{"op_type": "start", "begin_time":1674091800,"end_time":1674111600,"cycle": self.bar_step.seconds * 1000, "codes":[stock_code,]}})
             if amd.status_code != 200:
                 raise IOError('行情系统请求失败:%s' % amd.reason)
             resp = eval(amd.text)
