@@ -1,11 +1,11 @@
 import redis
 from datetime import datetime, timedelta, time
-from utils.data_channel import DataChannel
 import requests
 
 
-class StockChannel(DataChannel):
+class StockChannel(object):
     _freq = ['s', 'S', 'm', 'M']
+    quot_http = "http://18.210.70.17:16666/manager"
 
     def __init__(self,stock_code,cycle):
         if len(cycle) >= 2 and cycle[-1] in self._freq:
