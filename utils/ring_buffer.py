@@ -34,3 +34,10 @@ class RingBuffer(object):
 
     def get(self):
         return self.data
+
+    def reset_size(self,new_size):
+        if new_size>self.capacity:
+            self.data = [None for i in range(new_size - self.capacity)] + self.data
+        else:
+            #只增不减
+            pass
