@@ -5,6 +5,15 @@ from .__operators import *
 
 
 def calculator(channel,formula,name=None):
+    '''
+    :param channel: 可迭代对象，迭代返回item数据，item数据格式dict、Series均可
+    :param formula: 公式字符串，传入后可根据公式进行流式数据的计算
+    :param name: 指定公式计算结果的别名，默认为None，若指定了，会将计算结果更新到channel的行情结果中一并返回，key即为name的值
+    :return: Iterable，
+            每次返回的内容包含channel每次迭代返回的item和公式计算结果，
+            若未指定name，则返回为(item,result),
+            若指定了name，则返回为item，其中item[name]为公式计算结果。
+    '''
 
     if not isinstance(channel,Iterable):
         raise AssertionError("channel参数应为可迭代对象")
