@@ -50,13 +50,13 @@ def sigmoid(df):
     return 1 / (1 + exp(-df))
 
 def corr(df1,df2):
-    return np.corrcoef(df1,df2)
+    return np.corrcoef(df1,df2)[0,1]
 
 def rank(df):
     return np.sort(df)
 
 def cov(df1,df2):
-    return np.cov(df1,df2)
+    return np.cov(df1,df2)[0,1]
 
 def ifelse(judge,tr,fl):
     return tr if judge else fl
