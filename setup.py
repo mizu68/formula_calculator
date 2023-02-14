@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 import codecs
-from futures_utils import __version__ as ver
+from formula_calculator import __version__ as ver
 
 def read_install_requires():
     with codecs.open('requirements.txt', 'r', encoding='utf-8') as f:

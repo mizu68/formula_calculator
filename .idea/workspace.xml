@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5332594-4fb3-4315-b241-6cc5ad1a8076" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/formula_calculator/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/formula_calculator/channel_demo/__init__.py" afterDir="false" />
+    <list default="true" id="f5332594-4fb3-4315-b241-6cc5ad1a8076" name="Default Changelist" comment="0.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cal.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/operators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_channel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/ring_buffer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formula_calculator/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/formula_calculator/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formula_calculator/channel_demo/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/formula_calculator/channel_demo/data_channel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.demo">
     <configuration name="cal" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="calculator" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -80,6 +78,25 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="calculator" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="calculator" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -93,7 +110,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="SCRIPT_NAME" value="E:\code\analysis\calculator\demo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -104,6 +121,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.demo" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.cal" />
       </list>
@@ -122,7 +140,8 @@
       <workItem from="1676253352650" duration="19388000" />
       <workItem from="1676279712464" duration="124000" />
       <workItem from="1676337214832" duration="244000" />
-      <workItem from="1676337464583" duration="1397000" />
+      <workItem from="1676337464583" duration="2365000" />
+      <workItem from="1676345346600" duration="240000" />
     </task>
     <task id="LOCAL-00001" summary="0.1">
       <created>1676254564562</created>
@@ -152,7 +171,35 @@
       <option name="project" value="LOCAL" />
       <updated>1676277392082</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="0.1">
+      <created>1676338872926</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676338872926</updated>
+    </task>
+    <task id="LOCAL-00006" summary="0.1">
+      <created>1676338889868</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676338889868</updated>
+    </task>
+    <task id="LOCAL-00007" summary="0.1">
+      <created>1676339159400</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676339159400</updated>
+    </task>
+    <task id="LOCAL-00008" summary="0.1">
+      <created>1676339338543</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676339338543</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
