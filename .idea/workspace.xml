@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5332594-4fb3-4315-b241-6cc5ad1a8076" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/formula_calculator/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/formula_calculator/channel_demo/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cal.py" beforeDir="false" afterPath="$PROJECT_DIR$/cal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operators.py" beforeDir="false" afterPath="$PROJECT_DIR$/operators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/data_channel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/ring_buffer.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ring_buffer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cal.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/operators.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data_channel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ring_buffer.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +36,11 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\code\analysis\calculator\formula_calculator" />
+      <recent name="E:\code\analysis\calculator\formula_calculator\channel_demo" />
+      <recent name="E:\code\analysis\calculator" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\code\analysis\calculator" />
     </key>
@@ -49,7 +57,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.test">
     <configuration name="cal" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="calculator" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -72,8 +80,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="calculator" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.cal" />
       </list>
     </recent_temporary>
@@ -88,7 +119,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676253349842</updated>
-      <workItem from="1676253352650" duration="18574000" />
+      <workItem from="1676253352650" duration="19388000" />
+      <workItem from="1676279712464" duration="124000" />
+      <workItem from="1676337214832" duration="244000" />
+      <workItem from="1676337464583" duration="1397000" />
     </task>
     <task id="LOCAL-00001" summary="0.1">
       <created>1676254564562</created>
@@ -111,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676273529352</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="0.1">
+      <created>1676277392082</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676277392082</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,7 +163,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -133,6 +176,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="0.1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/calculator$cal.coverage" NAME="cal Coverage Results" MODIFIED="1676277307803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/calculator$cal.coverage" NAME="cal Coverage Results" MODIFIED="1676277749121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/calculator$test.coverage" NAME="test Coverage Results" MODIFIED="1676338849965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
