@@ -14,6 +14,6 @@ setup(
     packages=find_packages(),
     install_requires=read_install_requires(),
     python_requires='>=3.6',
-    description="交易与衍生品部自研公式计算器",
+    description="流式数据公式计算器",
     package_data={'': ['*.*']},
 )
