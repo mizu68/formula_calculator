@@ -17,10 +17,10 @@ def calculator(channel, **formulas):
 
     #定义迭代对象channel
     import redis
-    def channel(*args,**kargs):
-        rc = redis.StrictRedis(host='**.**.**.**', port=****, db=**)
+    def channel(ip,port,db,channel_name):
+        rc = redis.StrictRedis(host=ip, port=port, db=db)
         ps = rc.pubsub()
-        ps.subscribe("channel_name")
+        ps.subscribe(channel_name)
         for item in ps.listen():
             if item['type'] == 'message':
                 data = eval(item['data'])
@@ -30,7 +30,7 @@ def calculator(channel, **formulas):
                 'formula2' : "sum(abs(rolling(delta(close,1),20)))/abs(sum(rolling(delta(close,1),20)))-trace(close,20)",
                 'formula3' : "mean(sign(rolling(if(max(rolling(close,30))>=min(rolling(close,30)),1,-1),30)))"}
     #执行公式计算器的装饰运行
-    for i in calculator(channel,**formulas):
+    for i in calculator(channel("127.0.0.1",6379,0,"whatever_name"),**formulas):
         print(i)
 
     '''
