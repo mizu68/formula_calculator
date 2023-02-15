@@ -49,7 +49,11 @@ class StockChannel(object):
 
 
 if __name__ == '__main__':
-    fomula = "log(rolling(high,20),10)"
+    formulas = {
+    'formula1' : "max(rolling(close,10))-shift(close,10-argmax(rolling(close,10)))",
+    'formula2' : "sum(abs(rolling(delta(close,1),20)))/abs(sum(rolling(delta(close,1),20)))-trace(close,20)",
+    'formula3' : "mean(sign(rolling(if(max(rolling(close,30))>=min(rolling(close,30)),1,-1),30)))",
+    }
     channel = StockChannel('000002.SZ','3S').run()
-    for _,i in calculator(channel,fomula):
+    for i in calculator(channel,**formulas):
         print(i)
