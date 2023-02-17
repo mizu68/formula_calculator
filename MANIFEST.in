@@ -1,3 +1,2 @@
 include requirements.txt
-exclude .idea/* .idea/*/* demo.py .gitattributes .gitignore MANIFEST.in
 prune dist
