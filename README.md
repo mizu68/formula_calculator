@@ -1,4 +1,4 @@
-# 针对流式数据的公式计算器
+# 针对流式数据（行情数据）的公式计算器
 - 该工具主要针对流式数据在获取过程中实时执行公式计算的功能；
 - 核心方法为formula_calculator.calculator；
 - calculator需要传入channel和公式集合，channel可以是包装好的redis函数调用以及其它任何形式的可迭代对象；
