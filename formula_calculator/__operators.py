@@ -62,6 +62,11 @@ def ifelse(judge,tr,fl):
     return tr if judge else fl
 
 
+class UnFullException(Exception):
+    def __init__(self):
+        super().__init__(self)
+
+
 class BufferOpt(object):
     buffer = None
 
@@ -76,6 +81,8 @@ class delta(BufferOpt):
 
     def __call__(self, value,size):
         self.buffer.append(value)
+        if self.buffer.size<size+1:
+            raise UnFullException()
         return self.buffer.data[-1] - self.buffer.data[-1-size]
 
 
@@ -86,6 +93,8 @@ class div(BufferOpt):
 
     def __call__(self, value, size):
         self.buffer.append(value)
+        if self.buffer.size<size+1:
+            raise UnFullException()
         return self.buffer.data[-1] / self.buffer.data[-1 - size]
 
 
@@ -96,6 +105,8 @@ class shift(BufferOpt):
 
     def __call__(self, value,size):
         self.buffer.append(value)
+        if self.buffer.size<size+1:
+            raise UnFullException()
         return self.buffer.data[-size]
 
 
@@ -103,6 +114,8 @@ class rolling(BufferOpt):
 
     def __call__(self, value,size):
         self.buffer.append(value)
+        if self.buffer.size<size:
+            raise UnFullException()
         return self.buffer.data[-size:]
 
 
@@ -117,4 +130,10 @@ class trace(BufferOpt):
 
     def __call__(self, value,size):
         self.buffer.append(value)
-        return sum(abs(self.rolling0(self.delta0(value, 1), size))) / abs(sum(self.rolling1(self.delta1(value, 1), size)))
+        with np.errstate(divide='ignore'):
+            result = sum(abs(self.rolling0(self.delta0(value, 1), size))) / abs(sum(self.rolling1(self.delta1(value, 1), size)))
+            if ~np.isfinite(result):
+                result = 0
+        if self.buffer.size<size:
+            raise UnFullException()
+        return result

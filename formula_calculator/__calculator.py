@@ -34,6 +34,7 @@ def calculator(channel, **formulas):
         print(i)
 
     '''
+
     buffer_max_size = 1
     if not isinstance(channel,Iterable):
         raise AssertionError("channel参数应为可迭代对象")
@@ -44,10 +45,10 @@ def calculator(channel, **formulas):
     for key,value in formulas.items():
         if not isinstance(key, str) or not isinstance(value, str):
             raise AssertionError("公式名和公式应为字符串形式")
-        param_list.append(key)
-        formula_list.append(value)
+        param_list.append(key.replace(' ', ''))
+        formula_list.append(value.replace(' ', ''))
         buffer_max_size = max([int(x[1:]) for x in re.findall(r",[0-9.]+", value)] + [buffer_max_size, ])
-    formula_code = ", ".join(formula_list)
+    formula_code = " , ".join(formula_list)
     formula_code = formula_code.replace("if(", "ifelse(")
     variable_list = re.findall(r"[a-zA-Z]+", formula_code)
     value_list = []
@@ -59,13 +60,17 @@ def calculator(channel, **formulas):
                 new_name = key+'{0}('.format(i)
                 formula_code = formula_code.replace(key + '(', new_name, 1)
                 exec("{0}={1}(buffer_max_size)".format(new_name[:-1],key))
+    formula_list = formula_code.split(' , ')
+    if len(formula_list)!=len(formulas):
+        raise RuntimeError("公式预处理转换失败")
 
-    exec_code = ""
-    for name in param_list:
-        exec_code = exec_code + "item['" + name + "'],"
-    exec_code = exec_code[:-1] + " = " + formula_code
     for item in channel:
         for value in value_list:
             exec("{0}=float({1})".format(value,item[value]))
-        exec(exec_code)
+        for name, formula in zip(param_list, formula_list):
+            try:
+                result = eval(formula)
+            except UnFullException:
+                result = np.nan
+            item[name] = result
         yield item
