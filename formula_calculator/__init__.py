@@ -5,7 +5,7 @@ __version__='0.2.0'
 
 '''
     ###公式计算器###
-    该函数实现了在channel外的一层装饰器，除了可以迭代获取channel返回的数据外，同时实现formulas中定义的公式计算，并将计算结果update到channel的返回结果中
+    calculator函数实现了在channel外的一层装饰器，除了可以迭代获取channel返回的数据外，同时实现formulas中定义的公式计算，并将计算结果update到channel的返回结果中
     :param channel: 可迭代对象，迭代返回item数据，item数据格式dict、Series均可
     :param formulas: 公式集，传入后可对每一个公式进行流式数据的计算。公式的输入应为key-value形式,其中key为计算结果的名称，value为公式内容，且均为字符串，如factor1='max(rolling(high,20))'，或{'factor1':'max(rolling(high,20))'}
     :return: Iterable，每次返回的内容包含channel每次迭代返回的item和公式计算结果，其中item[key]为公式计算结果。
